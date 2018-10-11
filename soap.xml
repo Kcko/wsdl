@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/cleanWSDL/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Test" targetNamespace="http://localhost/cleanWSDL/server.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/cleanWSDL/server.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="TestPort">
+    <operation name="__construct">
+      <input message="tns:__constructIn"/>
+    </operation>
+    <operation name="login">
+      <documentation>Login - verify user</documentation>
+      <input message="tns:loginIn"/>
+      <output message="tns:loginOut"/>
+    </operation>
+    <operation name="getTimeAuthorized">
+      <input message="tns:getTimeAuthorizedIn"/>
+      <output message="tns:getTimeAuthorizedOut"/>
+    </operation>
+    <operation name="getTime">
+      <input message="tns:getTimeIn"/>
+      <output message="tns:getTimeOut"/>
+    </operation>
+    <operation name="getOneOrTwo">
+      <input message="tns:getOneOrTwoIn"/>
+      <output message="tns:getOneOrTwoOut"/>
+    </operation>
+  </portType>
+  <binding name="TestBinding" type="tns:TestPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="__construct">
+      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#__construct"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#login"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </output>
+    </operation>
+    <operation name="getTimeAuthorized">
+      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getTimeAuthorized"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </output>
+    </operation>
+    <operation name="getTime">
+      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getTime"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </output>
+    </operation>
+    <operation name="getOneOrTwo">
+      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getOneOrTwo"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="TestPort" binding="tns:TestBinding">
+      <soap:address location="http://localhost/cleanWSDL/server.php"/>
+    </port>
+  </service>
+  <message name="__constructIn"/>
+  <message name="loginIn">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="loginOut">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="getTimeAuthorizedIn">
+    <part name="sid" type="xsd:string"/>
+  </message>
+  <message name="getTimeAuthorizedOut">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="getTimeIn"/>
+  <message name="getTimeOut">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="getOneOrTwoIn">
+    <part name="one" type="xsd:boolean"/>
+  </message>
+  <message name="getOneOrTwoOut">
+    <part name="return" type="xsd:int"/>
+  </message>
+</definitions>

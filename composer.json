@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php2wsdl/php2wsdl": "^0.6.0",
+        "georgo/wsdl-creator": "1.4.1.4"
+    }
+}
