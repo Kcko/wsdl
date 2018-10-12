@@ -56,7 +56,7 @@ class Test
      */
     public function getTimeAuthorized($sid)
     {
-        // file_put_contents('log.txt', $this->level); // prekvapive 0, ne nastavena hodnota po loginu
+        file_put_contents('log2.txt', $this->level); // prekvapive 0, ne nastavena hodnota po loginu
 
         if (!($sid && $this->authToken && $sid == $this->authToken))
             throw new SoapFault('403', '403 - Error');
@@ -78,7 +78,7 @@ class Test
 
     /** 
     * @soap
-    * @param bool $one
+    * @param bool $one TRUE
     * @return int 
     */
     public function getOneOrTwo($one = TRUE)

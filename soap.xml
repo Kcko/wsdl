@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/cleanWSDL/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Test" targetNamespace="http://localhost/cleanWSDL/server.php">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/wsdl/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Test" targetNamespace="http://localhost/wsdl/server.php">
   <types>
-    <xsd:schema targetNamespace="http://localhost/cleanWSDL/server.php">
+    <xsd:schema targetNamespace="http://localhost/wsdl/server.php">
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
     </xsd:schema>
   </types>
@@ -30,54 +30,54 @@
   <binding name="TestBinding" type="tns:TestPort">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="__construct">
-      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#__construct"/>
+      <soap:operation soapAction="http://localhost/wsdl/server.php#__construct"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </output>
     </operation>
     <operation name="login">
-      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#login"/>
+      <soap:operation soapAction="http://localhost/wsdl/server.php#login"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </output>
     </operation>
     <operation name="getTimeAuthorized">
-      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getTimeAuthorized"/>
+      <soap:operation soapAction="http://localhost/wsdl/server.php#getTimeAuthorized"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </output>
     </operation>
     <operation name="getTime">
-      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getTime"/>
+      <soap:operation soapAction="http://localhost/wsdl/server.php#getTime"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </output>
     </operation>
     <operation name="getOneOrTwo">
-      <soap:operation soapAction="http://localhost/cleanWSDL/server.php#getOneOrTwo"/>
+      <soap:operation soapAction="http://localhost/wsdl/server.php#getOneOrTwo"/>
       <input>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </input>
       <output>
-        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cleanWSDL/server.php"/>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/wsdl/server.php"/>
       </output>
     </operation>
   </binding>
   <service name="TestService">
     <port name="TestPort" binding="tns:TestBinding">
-      <soap:address location="http://localhost/cleanWSDL/server.php"/>
+      <soap:address location="http://localhost/wsdl/server.php"/>
     </port>
   </service>
   <message name="__constructIn"/>
